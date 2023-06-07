@@ -1,0 +1,31 @@
+# Visit https://docs.rilldata.com/reference/project-files to learn more about Rill project files.
+
+title: "GCP_metrics_dashboard"
+model: "GCP_metrics_model"
+default_time_range: ""
+smallest_time_grain: ""
+timeseries: "usage_start_time"
+measures:
+  - label: Total records
+    expression: count(*)
+    name: total_records
+    description: Total number of records present
+    format_preset: humanize
+  - label: "Cost"
+    expression: "sum(cost)"
+    name: measure
+    description: "Total cost"
+    format_preset: currency_usd
+dimensions:
+  - label: Service_description
+    property: service_description
+    description: ""
+  - label: Sku_description
+    property: sku_description
+    description: ""
+  - label: Usage_unit
+    property: usage_unit
+    description: ""
+  - label: Pricing_unit
+    property: pricing_unit
+    description: ""
